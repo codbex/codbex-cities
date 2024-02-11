@@ -1,0 +1,5 @@
+{
+    "module": "codbex-cities/gen/ui/custom-action-dialog/view.js",
+    "extensionPoint": "codbex-cities-dialog-window",
+    "description": "codbex-cities - Custom Action Dialog Window"
+}

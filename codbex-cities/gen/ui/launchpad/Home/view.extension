@@ -1,0 +1,5 @@
+{
+    "module": "codbex-cities/gen/ui/launchpad/Home/view.js",
+    "extensionPoint": "codbex-cities-view",
+    "description": "codbex-cities - Application View"
+}

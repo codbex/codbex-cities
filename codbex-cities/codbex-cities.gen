@@ -46,7 +46,9 @@
           "widgetLength": "20",
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
+          "isRequiredProperty": false,
           "widgetLabel": "Id",
+          "widgetDropdownUrl": "",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -68,7 +70,9 @@
           "widgetLength": "100",
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
+          "isRequiredProperty": false,
           "widgetLabel": "Name",
+          "widgetDropdownUrl": "",
           "dataTypeJava": "string",
           "dataTypeTypescript": "string",
           "minLength": 0,
@@ -97,7 +101,9 @@
           "relationshipEntityName": "Country",
           "relationshipEntityPerspectiveName": "Countries",
           "dataNotNull": false,
+          "isRequiredProperty": false,
           "widgetLabel": "Country",
+          "widgetDropdownUrl": "\"/services/ts/codbex-countries/gen/api/Countries/CountryService.ts\"",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -120,6 +126,12 @@
       "title": "City",
       "tooltip": "City",
       "type": "PRIMARY",
+      "referencedProjections": [
+        {
+          "name": "Country",
+          "project": "codbex-countries"
+        }
+      ],
       "primaryKeys": [
         "Id"
       ],
@@ -143,7 +155,9 @@
           "widgetLength": "20",
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
+          "isRequiredProperty": false,
           "widgetLabel": "Id",
+          "widgetDropdownUrl": "",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -163,7 +177,9 @@
           "widgetLength": "20",
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
+          "isRequiredProperty": false,
           "widgetLabel": "Name",
+          "widgetDropdownUrl": "",
           "dataTypeJava": "string",
           "dataTypeTypescript": "string",
           "minLength": 0,
@@ -185,7 +201,9 @@
           "widgetLength": "20",
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
+          "isRequiredProperty": false,
           "widgetLabel": "Code2",
+          "widgetDropdownUrl": "",
           "dataTypeJava": "string",
           "dataTypeTypescript": "string",
           "minLength": 0,
@@ -207,7 +225,9 @@
           "widgetLength": "20",
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
+          "isRequiredProperty": false,
           "widgetLabel": "Code3",
+          "widgetDropdownUrl": "",
           "dataTypeJava": "string",
           "dataTypeTypescript": "string",
           "minLength": 0,
@@ -229,7 +249,9 @@
           "widgetLength": "20",
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
+          "isRequiredProperty": false,
           "widgetLabel": "Numeric",
+          "widgetDropdownUrl": "",
           "dataTypeJava": "string",
           "dataTypeTypescript": "string",
           "minLength": 0,
@@ -256,6 +278,7 @@
       "title": "Country",
       "tooltip": "Country",
       "type": "PROJECTION",
+      "referencedProjections": [],
       "primaryKeys": [
         "Id"
       ],

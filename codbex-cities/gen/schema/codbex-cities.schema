@@ -18,7 +18,6 @@
                         "length": 100,
                         "precision": "NaN",
                         "scale": "NaN",
-                        "nullable": true,
                         "name": "CITY_NAME"
                     },
                     {
@@ -26,7 +25,6 @@
                         "length": 0,
                         "precision": "NaN",
                         "scale": "NaN",
-                        "nullable": true,
                         "name": "CITY_COUNTRY"
                     }
                 ]
@@ -46,24 +44,32 @@
                     {
                         "type": "VARCHAR",
                         "length": 255,
+                        "precision": "NaN",
+                        "scale": "NaN",
                         "nullable": true,
                         "name": "COUNTRY_NAME"
                     },
                     {
                         "type": "CHAR",
                         "length": 2,
+                        "precision": "NaN",
+                        "scale": "NaN",
                         "nullable": true,
                         "name": "COUNTRY_CODE2"
                     },
                     {
                         "type": "CHAR",
                         "length": 3,
+                        "precision": "NaN",
+                        "scale": "NaN",
                         "nullable": true,
                         "name": "COUNTRY_CODE3"
                     },
                     {
                         "type": "CHAR",
                         "length": 3,
+                        "precision": "NaN",
+                        "scale": "NaN",
                         "nullable": true,
                         "name": "COUNTRY_NUMERIC"
                     }

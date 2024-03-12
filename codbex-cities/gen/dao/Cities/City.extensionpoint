@@ -1,1 +1,4 @@
-{"location":"codbex-cities/gen/dao/Cities/City.extensionpoint","name":"codbex-cities/Cities/City","description":"Extension Point for codbex-cities Cities City"}
+{
+    "name": "codbex-cities-Cities-City",
+    "description": "Extension Point for the codbex-cities-Cities-City entity"
+}

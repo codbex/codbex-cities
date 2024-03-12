@@ -5,13 +5,13 @@ import { dao as daoApi } from "sdk/db";
 
 export interface CityEntity {
     readonly Id: number;
-    Name?: string;
-    Country?: number;
+    Name: string;
+    Country: number;
 }
 
 export interface CityCreateEntity {
-    readonly Name?: string;
-    readonly Country?: number;
+    readonly Name: string;
+    readonly Country: number;
 }
 
 export interface CityUpdateEntity extends CityCreateEntity {
@@ -90,11 +90,13 @@ export class CityRepository {
                 name: "Name",
                 column: "CITY_NAME",
                 type: "VARCHAR",
+                required: true
             },
             {
                 name: "Country",
                 column: "CITY_COUNTRY",
                 type: "INTEGER",
+                required: true
             }
         ]
     };
@@ -177,7 +179,7 @@ export class CityRepository {
         return this.dao.count(options);
     }
 
-    public customDataCount(options?: CityEntityOptions): number {
+    public customDataCount(): number {
         const resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX_CITY"');
         if (resultSet !== null && resultSet[0] !== null) {
             if (resultSet[0].COUNT !== undefined && resultSet[0].COUNT !== null) {
@@ -190,7 +192,7 @@ export class CityRepository {
     }
 
     private async triggerEvent(data: CityEntityEvent) {
-        const triggerExtensions = await extensions.loadExtensionModules("codbex-cities/Cities/City", ["trigger"]);
+        const triggerExtensions = await extensions.loadExtensionModules("codbex-cities-Cities-City", ["trigger"]);
         triggerExtensions.forEach(triggerExtension => {
             try {
                 triggerExtension.trigger(data);
@@ -198,6 +200,6 @@ export class CityRepository {
                 console.error(error);
             }            
         });
-        producer.topic("codbex-cities/Cities/City").send(JSON.stringify(data));
+        producer.topic("codbex-cities-Cities-City").send(JSON.stringify(data));
     }
 }

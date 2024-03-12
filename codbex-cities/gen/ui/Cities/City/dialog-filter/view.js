@@ -7,7 +7,7 @@ const viewData = {
     id: "City-filter",
     label: "City Filter",
     link: "/services/web/codbex-cities/gen/ui/Cities/City/dialog-filter/index.html",
-    perspectiveName: "Cities"
+    perspectiveName: "Cities",
 };
 
 if (typeof exports !== 'undefined') {

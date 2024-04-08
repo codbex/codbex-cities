@@ -129,7 +129,7 @@ export class CountryRepository {
 
     private readonly dao;
 
-    constructor(dataSource?: string) {
+    constructor(dataSource = "DefaultDB") {
         this.dao = daoApi.create(CountryRepository.DEFINITION, null, dataSource);
     }
 

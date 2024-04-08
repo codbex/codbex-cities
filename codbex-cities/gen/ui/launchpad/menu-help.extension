@@ -1,1 +1,5 @@
-{"module":"codbex-cities/gen/ui/launchpad/menu-help.js","extensionPoint":"codbex-cities-menu","description":"codbex-cities - Application Menu"}
+{
+    "module": "codbex-cities/gen/ui/launchpad/menu-help.js",
+    "extensionPoint": "codbex-cities-menu",
+    "description": "codbex-cities - Application Menu"
+}

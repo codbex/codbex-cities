@@ -8,6 +8,7 @@
   "workspaceName": "workspace",
   "filePath": "codbex-cities.model",
   "templateId": "template-application-angular/template/template.js",
+  "dataSource": "DefaultDB",
   "perspectives": {
     "Cities": {
       "views": [
@@ -136,6 +137,7 @@
       "title": "City",
       "tooltip": "City",
       "type": "PRIMARY",
+      "dataSource": "DefaultDB",
       "referencedProjections": [
         {
           "name": "Country",
@@ -308,6 +310,7 @@
       "title": "Country",
       "tooltip": "Country",
       "type": "PROJECTION",
+      "dataSource": "DefaultDB",
       "referencedProjections": [],
       "primaryKeys": [
         "Id"

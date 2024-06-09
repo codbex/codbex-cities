@@ -74,6 +74,10 @@ interface CityEntityEvent {
     }
 }
 
+interface CityUpdateEntityEvent extends CityEntityEvent {
+    readonly previousEntity: CityEntity;
+}
+
 export class CityRepository {
 
     private static readonly DEFINITION = {
@@ -132,11 +136,13 @@ export class CityRepository {
     }
 
     public update(entity: CityUpdateEntity): void {
+        const previousEntity = this.findById(entity.Id);
         this.dao.update(entity);
         this.triggerEvent({
             operation: "update",
             table: "CODBEX_CITY",
             entity: entity,
+            previousEntity: previousEntity,
             key: {
                 name: "Id",
                 column: "CITY_ID",
@@ -191,7 +197,7 @@ export class CityRepository {
         return 0;
     }
 
-    private async triggerEvent(data: CityEntityEvent) {
+    private async triggerEvent(data: CityEntityEvent | CityUpdateEntityEvent) {
         const triggerExtensions = await extensions.loadExtensionModules("codbex-cities-Cities-City", ["trigger"]);
         triggerExtensions.forEach(triggerExtension => {
             try {

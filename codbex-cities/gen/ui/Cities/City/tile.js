@@ -5,11 +5,13 @@
  */
 exports.getTile = function () {
     return {
-        group: "Cities",
+        group: "codbex-cities",
         name: "City",
         caption: "Manage entity City",
         tooltip: "City",
-        // icon: "file-o",
+        type: "SETTING",
+        report: "false",
+        icon: "/services/web/resources/unicons/file.svg",
         location: "/services/web/codbex-cities/gen/ui/Cities/index.html",
         order: "100",
         groupOrder: "100",

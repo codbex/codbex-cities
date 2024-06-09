@@ -64,14 +64,15 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "City_Country",
                         "relationshipEntityName": "Country",
-                        "relationshipEntityPerspectiveName": "Countries"
+                        "relationshipEntityPerspectiveName": "Countries",
+                        "relationshipEntityPerspectiveLabel": "Entities"
                     }
                 ],
                 "caption": "Manage entity City",
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}CITY\"",
                 "dataName": "CITY",
                 "dataQuery": "",
-                "disableGeneration": "false",
+                "generateReport": "false",
                 "icon": "/services/web/resources/unicons/file.svg",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
@@ -80,12 +81,13 @@
                 "name": "City",
                 "navigationPath": "/Home",
                 "perspectiveIcon": "/services/web/resources/unicons/building.svg",
+                "perspectiveLabel": "Cities",
                 "perspectiveName": "Cities",
                 "perspectiveOrder": "100",
                 "perspectiveRole": "",
                 "title": "City",
                 "tooltip": "City",
-                "type": "PRIMARY"
+                "type": "SETTING"
             },
             {
                 "properties": [
@@ -192,7 +194,7 @@
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}COUNTRY\"",
                 "dataName": "COUNTRY",
                 "dataQuery": "",
-                "disableGeneration": "false",
+                "generateReport": "false",
                 "icon": "/services/web/resources/unicons/file.svg",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
@@ -201,6 +203,7 @@
                 "name": "Country",
                 "navigationPath": "/Home",
                 "perspectiveIcon": "/services/web/resources/unicons/globe.svg",
+                "perspectiveLabel": "Entities",
                 "perspectiveName": "Countries",
                 "perspectiveOrder": "100",
                 "perspectiveRole": "",

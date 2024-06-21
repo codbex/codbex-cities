@@ -1,0 +1,34 @@
+name: Release - Module
+
+on:
+  workflow_dispatch:
+    inputs:
+      release-version:
+        description: Release Version
+        required: true
+        default: 1.0.0
+
+run-name: 'version set to ${{ inputs.release-version }} for release'
+
+jobs:
+  main:
+    uses: codbex/codbex-infra/.github/workflows/module-release.yaml@main
+    with:
+      packages: codbex-cities
+      packages-build: codbex-cities
+      release-version: ${{ inputs.release-version }}
+      release-content: |
+        ## codbex-countries - ${{ inputs.release-version }}
+  
+        Cities Management Module
+  
+        ## Installation
+  
+        ```
+        npm install @codbex/codbex-cities@${{ inputs.release-version }}
+        ```
+  
+        ## Access points:
+  
+        - [/services/web/codbex-cities/gen/](http://localhost:8080/services/web/codbex-cities/gen/) - Admin Panel
+    secrets: inherit

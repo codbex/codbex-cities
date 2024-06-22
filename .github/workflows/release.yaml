@@ -30,5 +30,5 @@ jobs:
   
         ## Access points:
   
-        - [/services/web/codbex-cities/gen/](http://localhost:8080/services/web/codbex-cities/gen/) - Admin Panel
+        - [/services/web/codbex-cities/gen/](http://localhost:80/services/web/codbex-cities/gen/) - Admin Panel
     secrets: inherit

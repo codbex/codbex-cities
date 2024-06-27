@@ -5,11 +5,12 @@
   "title": "Cities Management Module",
   "description": "Managing cities data",
   "dataSource": "DefaultDB",
+  "fileName": "codbex-cities",
   "projectName": "codbex-cities",
   "workspaceName": "workspace",
   "filePath": "codbex-cities.model",
   "templateId": "template-application-angular/template/template.js",
-  "fileName": "codbex-cities",
+  "genFolderName": "codbex-cities",
   "perspectives": {
     "Cities": {
       "views": [
@@ -66,9 +67,7 @@
           "dataLength": "100",
           "dataName": "CITY_NAME",
           "dataNullable": false,
-          "dataPrecision": "NaN",
           "dataPrimaryKey": false,
-          "dataScale": "NaN",
           "dataType": "VARCHAR",
           "dataUnique": false,
           "isCalculatedProperty": false,
@@ -94,9 +93,7 @@
           "dataLength": "0",
           "dataName": "CITY_COUNTRY",
           "dataNullable": false,
-          "dataPrecision": "NaN",
           "dataPrimaryKey": false,
-          "dataScale": "NaN",
           "dataType": "INTEGER",
           "dataUnique": false,
           "isCalculatedProperty": false,
@@ -114,7 +111,7 @@
           "relationshipEntityPerspectiveLabel": "Entities",
           "dataNotNull": true,
           "widgetLabel": "Country",
-          "widgetDropdownUrl": "\"/services/ts/codbex-countries/gen/api/Countries/CountryService.ts\"",
+          "widgetDropdownUrl": "/services/ts/codbex-countries/gen/codbex-countries/api/Countries/CountryService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -144,7 +141,8 @@
       "referencedProjections": [
         {
           "name": "Country",
-          "project": "codbex-countries"
+          "project": "codbex-countries",
+          "genFolderName": "codbex-countries"
         }
       ],
       "primaryKeys": [
@@ -186,9 +184,7 @@
           "dataLength": "255",
           "dataName": "COUNTRY_NAME",
           "dataNullable": true,
-          "dataPrecision": "NaN",
           "dataPrimaryKey": false,
-          "dataScale": "NaN",
           "dataType": "VARCHAR",
           "dataUnique": true,
           "isCalculatedProperty": false,
@@ -214,9 +210,7 @@
           "dataLength": "2",
           "dataName": "COUNTRY_CODE2",
           "dataNullable": true,
-          "dataPrecision": "NaN",
           "dataPrimaryKey": false,
-          "dataScale": "NaN",
           "dataType": "CHAR",
           "dataUnique": true,
           "isCalculatedProperty": false,
@@ -242,9 +236,7 @@
           "dataLength": "3",
           "dataName": "COUNTRY_CODE3",
           "dataNullable": true,
-          "dataPrecision": "NaN",
           "dataPrimaryKey": false,
-          "dataScale": "NaN",
           "dataType": "CHAR",
           "dataUnique": true,
           "isCalculatedProperty": false,
@@ -270,9 +262,7 @@
           "dataLength": "3",
           "dataName": "COUNTRY_NUMERIC",
           "dataNullable": true,
-          "dataPrecision": "NaN",
           "dataPrimaryKey": false,
-          "dataScale": "NaN",
           "dataType": "CHAR",
           "dataUnique": true,
           "isCalculatedProperty": false,

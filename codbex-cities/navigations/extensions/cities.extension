@@ -1,0 +1,5 @@
+{
+    "extensionPoint": "dashboard-navigations",
+    "module": "codbex-cities/navigations/services/cities.js",
+    "description": "Cities Navigation"
+}

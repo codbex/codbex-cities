@@ -2,9 +2,8 @@ const navigationData = {
     id: 'cities-navigation',
     label: "Cities",
     view: "cities",
-    group: "configurations",
-    orderNumber: 1000,
-    lazyLoad: true,
+    group: "reference-data",
+    orderNumber: 500,
     link: "/services/web/codbex-cities/gen/codbex-cities/ui/Cities/index.html?embedded"
 };
 

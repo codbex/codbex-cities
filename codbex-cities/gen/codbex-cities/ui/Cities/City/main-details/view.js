@@ -4,11 +4,11 @@
  * Do not modify the content as it may be re-generated again.
  */
 const viewData = {
-    id: "City",
+    id: "City-details",
     label: "City",
     factory: "frame",
-    region: "left",
-    link: "/services/web/codbex-cities/gen/codbex-cities/ui/Cities/City/index.html",
+    region: "center",
+    link: "/services/web/codbex-cities/gen/codbex-cities/ui/Cities/City/main-details/index.html",
     perspectiveName: "Cities",
 };
 

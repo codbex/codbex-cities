@@ -56,6 +56,13 @@
       "role": ""
     }
   },
+  "roles": [
+    {
+      "entityName": "City",
+      "roleRead": "codbex-cities.Cities.CityReadOnly",
+      "roleWrite": "codbex-cities.Cities.CityFullAccess"
+    }
+  ],
   "models": [
     {
       "properties": [
@@ -143,6 +150,7 @@
       "dataName": "CITY",
       "dataQuery": "",
       "description": "Manage entity City",
+      "generateDefaultRoles": "true",
       "generateReport": "false",
       "icon": "/services/web/resources/unicons/file.svg",
       "layoutType": "MANAGE_MASTER",
@@ -156,6 +164,8 @@
       "perspectiveName": "Cities",
       "perspectiveOrder": "100",
       "perspectiveRole": "",
+      "roleRead": "codbex-cities.Cities.CityReadOnly",
+      "roleWrite": "codbex-cities.Cities.CityFullAccess",
       "title": "City",
       "tooltip": "City",
       "type": "SETTING",
@@ -377,6 +387,7 @@
       "dataName": "COUNTRY",
       "dataQuery": "",
       "description": "Manage entity Country",
+      "generateDefaultRoles": "false",
       "generateReport": "false",
       "icon": "/services/web/resources/unicons/file.svg",
       "layoutType": "MANAGE",

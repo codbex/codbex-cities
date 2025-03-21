@@ -1,1 +1,6 @@
-{"module":"codbex-cities/gen/codbex-cities/ui/Cities/City/tile.js","extensionPoint":"portal-tile","description":"codbex-cities - Application Tile"}
+{
+    "module": "codbex-cities/gen/codbex-cities/ui/Cities/City/tile.js",
+    "extensionPoint": "portal-tile",
+    "description": "codbex-cities - Application Tile",
+    "role": "codbex-cities.Cities.CityReadOnly,codbex-cities.Cities.CityFullAccess"
+}

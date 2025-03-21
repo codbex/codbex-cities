@@ -1,1 +1,5 @@
-{"module":"codbex-cities/gen/codbex-cities/ui/Cities/perspective.js","extensionPoint":"codbex-cities","description":"codbex-cities - Perspective - Cities"}
+{
+    "module": "codbex-cities/gen/codbex-cities/ui/Cities/perspective.js",
+    "extensionPoint": "codbex-cities",
+    "description": "codbex-cities - Perspective - Cities"
+}

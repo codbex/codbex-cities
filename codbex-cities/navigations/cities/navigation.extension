@@ -1,5 +1,6 @@
 {
     "extensionPoint": "dashboard-navigations",
     "module": "codbex-cities/navigations/cities/service.js",
-    "description": "Cities Navigation"
+    "description": "Cities Navigation",
+    "role": "codbex-cities.Cities.CityFullAccess,codbex-cities.Cities.CityReadOnly"
 }

@@ -7,8 +7,8 @@ const perspectiveData = {
 	id: 'Cities',
 	name: 'Cities',
 	link: '/services/web/codbex-cities/gen/codbex-cities/ui/Cities/index.html',
-	order: 100,
-	icon: '/services/web/resources/unicons/building.svg',
+	order: '100',
+	icon: '/services/web/resources/unicons/building.svg'
 };
 
 if (typeof exports !== 'undefined') {

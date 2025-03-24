@@ -1,0 +1,10 @@
+[
+    {
+        "name": "codbex-cities.Cities.CityReadOnly",
+        "description": "A role that grants read only permission for City."
+    },
+    {
+        "name": "codbex-cities.Cities.CityFullAccess",
+        "description": "A role that grants full access for City."
+    }
+]

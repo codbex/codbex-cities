@@ -8,6 +8,9 @@ const viewData = {
     label: "City",
     link: "/services/web/codbex-cities/gen/codbex-cities/ui/Cities/City/dialog-window/index.html",
     perspectiveName: "Cities",
+    roles: [
+        "codbex-cities.Cities.CityReadOnly",
+    ]
 };
 
 if (typeof exports !== 'undefined') {

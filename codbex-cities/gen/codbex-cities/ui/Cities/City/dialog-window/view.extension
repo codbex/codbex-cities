@@ -1,1 +1,6 @@
-{"module":"codbex-cities/gen/codbex-cities/ui/Cities/City/dialog-window/view.js","extensionPoint":"dialog-window","description":"codbex-cities - Application Dialog Window"}
+{
+    "module": "{{projectName}}/gen/{{genFolderName}}/ui/{{perspectiveName}}/{{name}}/dialog-window/view.js",
+    "extensionPoint": "dialog-window",
+    "description": "{{projectName}} - Application Dialog Window",
+    "role": "codbex-cities.Cities.CityReadOnly,codbex-cities.Cities.CityFullAccess"
+}

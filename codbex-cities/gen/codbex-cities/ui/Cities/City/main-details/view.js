@@ -9,7 +9,7 @@ const viewData = {
     factory: "frame",
     region: "center",
     link: "/services/web/codbex-cities/gen/codbex-cities/ui/Cities/City/main-details/index.html",
-    perspectiveName: "Cities",
+    perspectiveName: "Cities"
 };
 
 if (typeof exports !== 'undefined') {

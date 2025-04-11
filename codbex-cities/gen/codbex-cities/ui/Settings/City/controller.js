@@ -117,7 +117,7 @@ angular.module('page', ['blimpKit', 'platformView', 'EntityService'])
 
 		$scope.openFilter = (entity) => {
 			Dialogs.showWindow({
-				id: '${property.relationshipEntityName}-details',
+				id: 'City-details',
 				params: {
 					entity: $scope.filterEntity,
 					optionsCountry: $scope.optionsCountry,
@@ -141,7 +141,7 @@ angular.module('page', ['blimpKit', 'platformView', 'EntityService'])
 
 		$scope.updateEntity = (entity) => {
 			Dialogs.showWindow({
-				id: '${property.relationshipEntityName}-details',
+				id: 'City-details',
 				params: {
 					action: 'update',
 					entity: entity,

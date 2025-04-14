@@ -1,6 +1,0 @@
-{
-    "module": "codbex-cities/gen/codbex-cities/ui/Cities/City/tile.js",
-    "extensionPoint": "codbex-cities-tile",
-    "description": "codbex-cities - Application Tile",
-    "role": "codbex-cities.Cities.CityReadOnly,codbex-cities.Cities.CityFullAccess"
-}

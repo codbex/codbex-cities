@@ -1,0 +1,6 @@
+{
+    "module": "codbex-cities/gen/codbex-cities/ui/Settings/City/view.js",
+    "extensionPoint": "application-settings",
+    "description": "codbex-cities - Application View",
+    "role": "codbex-cities.Cities.CityReadOnly,codbex-cities.Cities.CityFullAccess"
+}

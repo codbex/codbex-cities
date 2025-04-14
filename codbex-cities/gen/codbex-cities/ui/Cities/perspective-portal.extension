@@ -1,5 +1,0 @@
-{
-    "module": "codbex-cities/gen/codbex-cities/ui/Cities/perspective.js",
-    "extensionPoint": "portal",
-    "description": "codbex-cities - Perspective - Cities"
-}

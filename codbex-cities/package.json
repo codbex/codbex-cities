@@ -12,6 +12,6 @@
         "build": "tsc"
     },
     "dependencies": {
-        "@codbex/codbex-countries": "0.4.0"
+        "@codbex/codbex-countries": "1.0.0"
     }
 }

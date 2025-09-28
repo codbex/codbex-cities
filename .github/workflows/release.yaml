@@ -18,7 +18,7 @@ jobs:
       packages-build: codbex-cities
       release-version: ${{ inputs.release-version }}
       release-content: |
-        ## codbex-countries - ${{ inputs.release-version }}
+        ## codbex-cities - ${{ inputs.release-version }}
   
         Cities Management Module
   

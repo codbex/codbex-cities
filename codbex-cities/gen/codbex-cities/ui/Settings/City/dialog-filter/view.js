@@ -6,6 +6,12 @@
 const viewData = {
     id: 'City-filter',
     label: 'City Filter',
+    translation: {
+        key: 'codbex-cities:codbex-cities-model.extName',
+        options: {
+            content: '$t(codbex-cities:codbex-cities-model.t.CITY) $t(codbex-cities:codbex-cities-model.defaults.filter)',
+        }
+    },
     path: '/services/web/codbex-cities/gen/codbex-cities/ui/Settings/City/dialog-filter/index.html',
     perspectiveName: 'Settings'
 };

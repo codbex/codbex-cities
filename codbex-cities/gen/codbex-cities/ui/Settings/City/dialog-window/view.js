@@ -6,6 +6,9 @@
 const viewData = {
     id: 'City-details',
     label: 'City',
+    translation: {
+        key: 'codbex-cities:codbex-cities-model.t.CITY',
+    },
     path: '/services/web/codbex-cities/gen/codbex-cities/ui/Settings/City/dialog-window/index.html',
     perspectiveName: 'Settings'
 };

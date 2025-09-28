@@ -6,6 +6,9 @@
 const viewData = {
     id: 'City',
     label: 'City',
+    translation: {
+        key: 'codbex-cities:codbex-cities-model.t.CITY',
+    },
     region: 'center',
     lazyLoad: true,
 	autoFocusTab: false,

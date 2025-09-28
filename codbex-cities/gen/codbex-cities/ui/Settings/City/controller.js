@@ -1,9 +1,23 @@
-angular.module('page', ['blimpKit', 'platformView', 'EntityService'])
+angular.module('page', ['blimpKit', 'platformView', 'platformLocale', 'EntityService'])
 	.config(['EntityServiceProvider', (EntityServiceProvider) => {
 		EntityServiceProvider.baseUrl = '/services/ts/codbex-cities/gen/codbex-cities/api/Settings/CityService.ts';
 	}])
-	.controller('PageController', ($scope, $http, EntityService, Extensions, ButtonStates) => {
+	.controller('PageController', ($scope, $http, EntityService, Extensions, LocaleService, ButtonStates) => {
 		const Dialogs = new DialogHub();
+		let translated = {
+			yes: 'Yes',
+			no: 'No',
+			deleteConfirm: 'Are you sure you want to delete City? This action cannot be undone.',
+			deleteTitle: 'Delete City?'
+		};
+
+		LocaleService.onInit(() => {
+			translated.yes = LocaleService.t('codbex-cities:codbex-cities-model.defaults.yes');
+			translated.no = LocaleService.t('codbex-cities:codbex-cities-model.defaults.no');
+			translated.deleteTitle = LocaleService.t('codbex-cities:codbex-cities-model.defaults.deleteTitle', { name: '$t(codbex-cities:codbex-cities-model.t.CITY)' });
+			translated.deleteConfirm = LocaleService.t('codbex-cities:codbex-cities-model.messages.deleteConfirm', { name: '$t(codbex-cities:codbex-cities-model.t.CITY)' });
+		});
+
 		$scope.dataPage = 1;
 		$scope.dataCount = 0;
 		$scope.dataLimit = 20;
@@ -17,8 +31,10 @@ angular.module('page', ['blimpKit', 'platformView', 'EntityService'])
 		$scope.triggerPageAction = (action) => {
 			Dialogs.showWindow({
 				hasHeader: true,
-        		title: action.label,
+        		title: LocaleService.t(action.translation.key, action.translation.options, action.label),
 				path: action.path,
+				maxWidth: action.maxWidth,
+				maxHeight: action.maxHeight,
 				closeButton: true
 			});
 		};
@@ -26,7 +42,7 @@ angular.module('page', ['blimpKit', 'platformView', 'EntityService'])
 		$scope.triggerEntityAction = (action) => {
 			Dialogs.showWindow({
 				hasHeader: true,
-        		title: action.label,
+        		title: LocaleService.t(action.translation.key, action.translation.options, action.label),
 				path: action.path,
 				params: {
 					id: $scope.entity.Id
@@ -80,17 +96,19 @@ angular.module('page', ['blimpKit', 'platformView', 'EntityService'])
 				request.then((response) => {
 					$scope.data = response.data;
 				}, (error) => {
+					const message = error.data ? error.data.message : '';
 					Dialogs.showAlert({
-						title: 'City',
-						message: `Unable to list/filter City: '${error.message}'`,
+						title: LocaleService.t('codbex-cities:codbex-cities-model.t.CITY'),
+						message: LocaleService.t('codbex-cities:codbex-cities-model.messages.error.unableToLF', { name: '$t(codbex-cities:codbex-cities-model.t.CITY)', message: message }),
 						type: AlertTypes.Error
 					});
 					console.error('EntityService:', error);
 				});
 			}, (error) => {
+				const message = error.data ? error.data.message : '';
 				Dialogs.showAlert({
-					title: 'City',
-					message: `Unable to count City: '${error.message}'`,
+					title: LocaleService.t('codbex-cities:codbex-cities-model.t.CITY'),
+					message: LocaleService.t('codbex-cities:codbex-cities-model.messages.error.unableToCount', { name: '$t(codbex-cities:codbex-cities-model.t.CITY)', message: message }),
 					type: AlertTypes.Error
 				});
 				console.error('EntityService:', error);
@@ -115,9 +133,9 @@ angular.module('page', ['blimpKit', 'platformView', 'EntityService'])
 			});
 		};
 
-		$scope.openFilter = (entity) => {
+		$scope.openFilter = () => {
 			Dialogs.showWindow({
-				id: 'City-details',
+				id: 'City-filter',
 				params: {
 					entity: $scope.filterEntity,
 					optionsCountry: $scope.optionsCountry,
@@ -153,16 +171,16 @@ angular.module('page', ['blimpKit', 'platformView', 'EntityService'])
 
 		$scope.deleteEntity = (entity) => {
 			let id = entity.Id;
-			Dialog.showDialog({
-				title: 'Delete City?',
-				message: `Are you sure you want to delete City? This action cannot be undone.`,
+			Dialogs.showDialog({
+				title: translated.deleteTitle,
+				message: translated.deleteConfirm,
 				buttons: [{
 					id: 'delete-btn-yes',
 					state: ButtonStates.Emphasized,
-					label: 'Yes',
+					label: translated.yes,
 				}, {
 					id: 'delete-btn-no',
-					label: 'No',
+					label: translated.no,
 				}]
 			}).then((buttonId) => {
 				if (buttonId === 'delete-btn-yes') {
@@ -172,8 +190,8 @@ angular.module('page', ['blimpKit', 'platformView', 'EntityService'])
 					}, (error) => {
 						const message = error.data ? error.data.message : '';
 						Dialogs.showAlert({
-							title: 'City',
-							message: `Unable to delete City: '${message}'`,
+							title: LocaleService.t('codbex-cities:codbex-cities-model.t.CITY'),
+							message: LocaleService.t('codbex-cities:codbex-cities-model.messages.error.unableToDelete', { name: '$t(codbex-cities:codbex-cities-model.t.CITY)', message: message }),
 							type: AlertTypes.Error
 						});
 						console.error('EntityService:', error);
@@ -196,7 +214,7 @@ angular.module('page', ['blimpKit', 'platformView', 'EntityService'])
 			const message = error.data ? error.data.message : '';
 			Dialogs.showAlert({
 				title: 'Country',
-				message: `Unable to load data: '${message}'`,
+				message: LocaleService.t('codbex-cities:codbex-cities-model.messages.error.unableToLoad', { message: message }),
 				type: AlertTypes.Error
 			});
 		});

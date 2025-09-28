@@ -1,4 +1,4 @@
-import { query } from "sdk/db";
+import { sql, query } from "sdk/db";
 import { producer } from "sdk/messaging";
 import { extensions } from "sdk/extensions";
 import { dao as daoApi } from "sdk/db";
@@ -58,12 +58,13 @@ export interface CityEntityOptions {
     },
     $select?: (keyof CityEntity)[],
     $sort?: string | (keyof CityEntity)[],
-    $order?: 'asc' | 'desc',
+    $order?: 'ASC' | 'DESC',
     $offset?: number,
     $limit?: number,
+    $language?: string
 }
 
-interface CityEntityEvent {
+export interface CityEntityEvent {
     readonly operation: 'create' | 'update' | 'delete';
     readonly table: string;
     readonly entity: Partial<CityEntity>;
@@ -74,7 +75,7 @@ interface CityEntityEvent {
     }
 }
 
-interface CityUpdateEntityEvent extends CityEntityEvent {
+export interface CityUpdateEntityEvent extends CityEntityEvent {
     readonly previousEntity: CityEntity;
 }
 
@@ -108,15 +109,65 @@ export class CityRepository {
     private readonly dao;
 
     constructor(dataSource = "DefaultDB") {
-        this.dao = daoApi.create(CityRepository.DEFINITION, null, dataSource);
+        this.dao = daoApi.create(CityRepository.DEFINITION, undefined, dataSource);
     }
 
-    public findAll(options?: CityEntityOptions): CityEntity[] {
-        return this.dao.list(options);
+    public findAll(options: CityEntityOptions = {}): CityEntity[] {
+        let list = this.dao.list(options);
+        try {
+            let script = sql.getDialect().select().column("*").from('"' + CityRepository.DEFINITION.table + '_LANG"').where('Language = ?').build();
+            const resultSet = query.execute(script, [options.$language]);
+            if (resultSet !== null && resultSet[0] !== null) {
+                let translatedProperties = Object.getOwnPropertyNames(resultSet[0]);
+                let maps = [];
+                for (let i = 0; i < translatedProperties.length - 2; i++) {
+                    maps[i] = {};
+                }
+                resultSet.forEach((r) => {
+                    for (let i = 0; i < translatedProperties.length - 2; i++) {
+                        maps[i][r[translatedProperties[0]]] = r[translatedProperties[i + 1]];
+                    }
+                });
+                list.forEach((r) => {
+                    for (let i = 0; i < translatedProperties.length - 2; i++) {
+                        if (maps[i][r[translatedProperties[0]]]) {
+                            r[translatedProperties[i + 1]] = maps[i][r[translatedProperties[0]]];
+                        }
+                    }
+
+                });
+            }
+        } catch (Error) {
+            console.error("Entity is marked as language dependent, but no language table present: " + CityRepository.DEFINITION.table);
+        }
+        return list;
     }
 
-    public findById(id: number): CityEntity | undefined {
+    public findById(id: number, options: CityEntityOptions = {}): CityEntity | undefined {
         const entity = this.dao.find(id);
+        if (entity) {
+            try {
+                let script = sql.getDialect().select().column("*").from('"' + CityRepository.DEFINITION.table + '_LANG"').where('Language = ?').where('Id = ?').build();
+                const resultSet = query.execute(script, [options.$language, id]);
+                let translatedProperties = Object.getOwnPropertyNames(resultSet[0]);
+                let maps = [];
+                for (let i = 0; i < translatedProperties.length - 2; i++) {
+                    maps[i] = {};
+                }
+                resultSet.forEach((r) => {
+                    for (let i = 0; i < translatedProperties.length - 2; i++) {
+                        maps[i][r[translatedProperties[0]]] = r[translatedProperties[i + 1]];
+                    }
+                });
+                for (let i = 0; i < translatedProperties.length - 2; i++) {
+                    if (maps[i][entity[translatedProperties[0]]]) {
+                        entity[translatedProperties[i + 1]] = maps[i][entity[translatedProperties[0]]];
+                    }
+                }
+            } catch (Error) {
+                console.error("Entity is marked as language dependent, but no language table present: " + CityRepository.DEFINITION.table);
+            }
+        }
         return entity ?? undefined;
     }
 

@@ -33,6 +33,7 @@
       "role": ""
     }
   },
+  "tprefix": "codbex-cities-model",
   "models": [
     {
       "properties": [
@@ -128,6 +129,7 @@
       "menuIndex": "100",
       "menuKey": "city",
       "menuLabel": "City",
+      "multilingual": "true",
       "name": "City",
       "perspectiveHeader": "",
       "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
@@ -306,6 +308,7 @@
       "menuIndex": "100",
       "menuKey": "country",
       "menuLabel": "Country",
+      "multilingual": "false",
       "name": "Country",
       "perspectiveHeader": "",
       "perspectiveIcon": "/services/web/resources/unicons/globe.svg",

@@ -1,6 +1,6 @@
 {
     "name": "@codbex/codbex-cities",
-    "version": "0.6.0",
+    "version": "1.0.0",
     "repository": {
         "url": "https://github.com/codbex/codbex-cities.git",
         "type": "git"

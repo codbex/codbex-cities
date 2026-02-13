@@ -1,0 +1,34 @@
+import { Entity, Table, Id, Generated, Column, Documentation } from '@aerokit/sdk/db'
+
+@Entity('CityEntity')
+@Table('CODBEX_CITY')
+@Documentation('City entity mapping')
+export class CityEntity {
+
+    @Id()
+    @Generated('sequence')
+    @Documentation('Id')
+    @Column({
+        name: 'CITY_ID',
+        type: 'integer',
+    })
+    public Id?: number;
+
+    @Documentation('Name')
+    @Column({
+        name: 'CITY_NAME',
+        type: 'string',
+        length: 100,
+    })
+    public Name!: string;
+
+    @Documentation('Country')
+    @Column({
+        name: 'CITY_COUNTRY',
+        type: 'integer',
+    })
+    public Country!: number;
+
+}
+
+(new CityEntity());

@@ -3,7 +3,7 @@
   "brand": "codbex",
   "brandUrl": "https://www.codbex.com/",
   "title": "Cities Management Module",
-  "description": "Managing Cities data",
+  "description": "Managing Cities Data",
   "projectName": "codbex-cities",
   "workspaceName": "workspace",
   "filePath": "codbex-cities.model",

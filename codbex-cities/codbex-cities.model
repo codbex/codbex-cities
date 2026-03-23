@@ -4,6 +4,7 @@
             {
                 "properties": [
                     {
+                        "auditType": "NONE",
                         "dataAutoIncrement": "true",
                         "dataName": "CITY_ID",
                         "dataNullable": "true",
@@ -18,6 +19,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "100",
                         "dataName": "CITY_NAME",
                         "dataNullable": "false",
@@ -32,6 +34,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataName": "CITY_COUNTRY",
                         "dataNullable": "false",
                         "dataType": "INTEGER",
@@ -69,7 +72,7 @@
                 "name": "City",
                 "perspectiveHeader": "",
                 "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveLabel": "Entities",
+                "perspectiveLabel": "Settings",
                 "perspectiveName": "Settings",
                 "perspectiveNavId": "",
                 "perspectiveOrder": "100",
@@ -83,6 +86,7 @@
             {
                 "properties": [
                     {
+                        "auditType": "NONE",
                         "calculatedPropertyExpressionCreate": "",
                         "calculatedPropertyExpressionUpdate": "",
                         "dataAutoIncrement": "true",
@@ -99,6 +103,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "calculatedPropertyExpressionCreate": "",
                         "calculatedPropertyExpressionUpdate": "",
                         "dataLength": "255",
@@ -115,6 +120,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "calculatedPropertyExpressionCreate": "",
                         "calculatedPropertyExpressionUpdate": "",
                         "dataLength": "2",
@@ -131,6 +137,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "calculatedPropertyExpressionCreate": "",
                         "calculatedPropertyExpressionUpdate": "",
                         "dataLength": "3",
@@ -147,6 +154,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "calculatedPropertyExpressionCreate": "",
                         "calculatedPropertyExpressionUpdate": "",
                         "dataLength": "3",

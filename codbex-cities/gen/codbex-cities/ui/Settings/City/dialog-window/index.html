@@ -31,7 +31,7 @@
 	                                state="{{ forms.details['Name'].$valid ? '' : 'error' }}"
 									ng-required="true"
 	                                ng-model="entity.Name"
-	                                ng-readonly="true"
+	                                ng-readonly="action === 'select'"
 									ng-maxlength="100.0"
 	                                type="text"
 	                                placeholder="{{ 'codbex-cities:codbex-cities-model.messages.inputEnter' | t:{'name':'$t(codbex-cities:codbex-cities-model.t.CITY_NAME)'} }}">
@@ -49,7 +49,7 @@
 	                            state="{{ forms.details['Country'].$valid ? '' : 'error' }}"
 	                            ng-required="true"
 	                            ng-model="entity.Country"
-	                            is-readonly="true"
+	                            is-readonly="action === 'select'"
 	                            dropdown-items="optionsCountry"
 	                            placeholder="{{ 'codbex-cities:codbex-cities-model.messages.inputSearch' | t:{'name':'$t(codbex-cities:codbex-cities-model.t.CITY_COUNTRY)'} }}"
 								btn-aria-label="{{ 'codbex-cities:codbex-cities-model.aria.showHide' | t:{'name':'Country'} }}" list-aria-label="{{ 'codbex-cities:codbex-cities-model.aria.options' | t:{'name':'Country'} }}">

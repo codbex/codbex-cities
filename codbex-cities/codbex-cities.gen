@@ -4,13 +4,21 @@
   "brandUrl": "https://www.codbex.com/",
   "title": "Cities Management Module",
   "description": "Managing Cities Data",
+  "fileName": "codbex-cities",
+  "genFolderName": "codbex-cities",
+  "dataSource": "DefaultDB",
+  "roles": [
+    {
+      "entityName": "City",
+      "roleRead": "codbex-cities.Cities.CityReadOnly",
+      "roleWrite": "codbex-cities.Cities.CityFullAccess"
+    }
+  ],
+  "tprefix": "codbex-cities-model",
   "projectName": "codbex-cities",
   "workspaceName": "workspace",
   "filePath": "codbex-cities.model",
   "templateId": "template-application-angular-v2/template/template.js",
-  "fileName": "codbex-cities",
-  "genFolderName": "codbex-cities",
-  "dataSource": "DefaultDB",
   "perspectives": {
     "Settings": {
       "views": [
@@ -26,18 +34,11 @@
       "role": ""
     }
   },
-  "roles": [
-    {
-      "entityName": "City",
-      "roleRead": "codbex-cities.Cities.CityReadOnly",
-      "roleWrite": "codbex-cities.Cities.CityFullAccess"
-    }
-  ],
-  "tprefix": "codbex-cities-model",
   "models": [
     {
       "properties": [
         {
+          "auditType": "NONE",
           "dataAutoIncrement": true,
           "dataName": "CITY_ID",
           "dataNullable": true,
@@ -63,6 +64,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataLength": "100",
           "dataName": "CITY_NAME",
           "dataNullable": false,
@@ -91,6 +93,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataName": "CITY_COUNTRY",
           "dataNullable": false,
           "dataType": "INTEGER",
@@ -165,6 +168,7 @@
     {
       "properties": [
         {
+          "auditType": "NONE",
           "calculatedPropertyExpressionCreate": "",
           "calculatedPropertyExpressionUpdate": "",
           "dataAutoIncrement": true,
@@ -192,6 +196,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "calculatedPropertyExpressionCreate": "",
           "calculatedPropertyExpressionUpdate": "",
           "dataLength": "255",
@@ -222,6 +227,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "calculatedPropertyExpressionCreate": "",
           "calculatedPropertyExpressionUpdate": "",
           "dataLength": "2",
@@ -252,6 +258,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "calculatedPropertyExpressionCreate": "",
           "calculatedPropertyExpressionUpdate": "",
           "dataLength": "3",
@@ -282,6 +289,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "calculatedPropertyExpressionCreate": "",
           "calculatedPropertyExpressionUpdate": "",
           "dataLength": "3",

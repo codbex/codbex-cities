@@ -1,7 +1,5 @@
 # 📦 codbex-cities
 
----
-
 ## 📖 Table of Contents
 * [🗺️ Entity Data Model (EDM)](#️-entity-data-model-edm)
 * [📦 Dependencies](#-dependencies)

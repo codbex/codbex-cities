@@ -5,7 +5,6 @@
 * [📦 Dependencies](#-dependencies)
 * [🧩 Core Entities](#-core-entities)
 * [🐳 Local Development with Docker](#-local-development-with-docker)
-* [🛠️ Maintenance](#️-maintenance)
 
 ---
 
@@ -39,13 +38,13 @@
 
 ## 📦 Dependencies
 
-   - ![codbex-countries](https://github.com/codbex/codbex-countries)
+   - [codbex-countries](https://github.com/codbex/codbex-countries)
 
 ---
 
 ## 🔗 Associated Modules
 
-- ![codbex-cities-data](https://github.com/codbex/codbex-cities-data)
+- [codbex-cities-data](https://github.com/codbex/codbex-cities-data)
 
 ---
 

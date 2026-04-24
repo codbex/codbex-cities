@@ -17,7 +17,7 @@
 
 | Field  | Type   | Details              | Description                                     |
 | ------ | ------ | -------------------- | ----------------------------------------------- |
-| ID     | INTEGER | PK, Identity         | Unique identifier for the city.                 |
+| Id     | INTEGER | PK, Identity         | Unique identifier for the city.                 |
 | Name   | VARCHAR | Length: 100, Not Null | Name of the city.                               |
 | Country | INTEGER | Not Null, FK         | Foreign key referencing the country of the city. |
 

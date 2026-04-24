@@ -1,12 +1,11 @@
-# 📦 codbex-cities
+# <img src="https://www.codbex.com/icon.svg" width="32" style="vertical-align: middle;"> codbex-cities
 
 ## 📖 Table of Contents
 * [🗺️ Entity Data Model (EDM)](#️-entity-data-model-edm)
-* [📦 Dependencies](#-dependencies)
 * [🧩 Core Entities](#-core-entities)
+* [📦 Dependencies](#-dependencies)
 * [🐳 Local Development with Docker](#-local-development-with-docker)
-
----
+* [🛠️ Maintenance](#️-maintenance)
 
 ## 🗺️ Entity Data Model (EDM)
 
@@ -16,37 +15,19 @@
 
 ### Entity: `City`
 
-#### Fields:
-1. **ID**
-   - **Type**: INTEGER
-   - **Primary Key**: Yes
-   - **Identity**: Yes
-   - **Description**: Unique identifier for the city.
-
-2. **Name**
-   - **Type**: VARCHAR
-   - **Length**: 100
-   - **Nullable**: No
-   - **Description**: Name of the city.
-
-3. **Country**
-   - **Type**: INTEGER
-   - **Nullable**: No
-   - **Description**: Foreign key referencing the country to which the city belongs.
-   
----
+| Field  | Type   | Details              | Description                                     |
+| ------ | ------ | -------------------- | ----------------------------------------------- |
+| ID     | INTEGER | PK, Identity         | Unique identifier for the city.                 |
+| Name   | VARCHAR | Length: 100, Not Null | Name of the city.                               |
+| Country | INTEGER | Not Null, FK         | Foreign key referencing the country of the city. |
 
 ## 📦 Dependencies
 
-   - [codbex-countries](https://github.com/codbex/codbex-countries)
+ - [codbex-countries](https://github.com/codbex/codbex-countries)
 
----
-
-## 🔗 Associated Modules
+## 🔗 Sample Data Modules
 
 - [codbex-cities-data](https://github.com/codbex/codbex-cities-data)
-
----
 
 ## 🐳 Local Development with Docker
 

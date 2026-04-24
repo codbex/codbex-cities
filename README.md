@@ -9,7 +9,7 @@
 
 ## 🗺️ Entity Data Model (EDM)
 
-![model](images/cities-model.png)
+![model](images/model.png)
 
 ## 🧩 Core Entities
 

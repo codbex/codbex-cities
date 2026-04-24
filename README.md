@@ -6,7 +6,6 @@
 * [📦 Dependencies](#-dependencies)
 * [🔗 Sample Data Modules](#-sample-data-modules)
 * [🐳 Local Development with Docker](#-local-development-with-docker)
-* [🛠️ Maintenance](#️-maintenance)
 
 ## 🗺️ Entity Data Model (EDM)
 

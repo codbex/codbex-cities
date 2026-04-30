@@ -9,6 +9,6 @@
         "registry": "https://npm.pkg.github.com"
     },
     "dependencies": {
-        "@codbex/codbex-countries": "^1.4.0"
+        "@codbex/codbex-countries": "^1.5.0"
     }
 }

@@ -82,7 +82,7 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale']).controlle
 	$scope.loadMoreOptionsCountry = () => {
 		const limit = 20;
 		$scope.optionsCountryLoading = true;
-		$http.get(`/services/ts/codbex-countries/gen/codbex-countries/api/Settings/CountryController.ts?$limit=${limit}&$offset=${++loadMoreOptionsCountryCounter * limit}`)
+		$http.get(`/services/java/codbex-countries/gen/codbex_countries/api/settings/CountryController?$limit=${limit}&$offset=${++loadMoreOptionsCountryCounter * limit}`)
 		.then((response) => {
 			const optionValues = allValuesCountry.map(e => e.value);
 			const resultValues = response.data.map(e => ({
@@ -132,7 +132,7 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale']).controlle
 				}
 			})
 			if (!cacheHit) {
-				$http.post('/services/ts/codbex-countries/gen/codbex-countries/api/Settings/CountryController.ts/search', {
+				$http.post('/services/java/codbex-countries/gen/codbex_countries/api/settings/CountryController/search', {
 					conditions: [
 						{ propertyName: 'Name', operator: 'LIKE', value: `${event.originalEvent.target.value}%` }
 					]

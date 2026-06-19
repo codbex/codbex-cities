@@ -4,21 +4,15 @@
   "brandUrl": "https://www.codbex.com/",
   "title": "Cities Management Module",
   "description": "Managing Cities Data",
-  "fileName": "codbex-cities",
-  "genFolderName": "codbex-cities",
-  "dataSource": "DefaultDB",
-  "roles": [
-    {
-      "entityName": "City",
-      "roleRead": "codbex-cities.Cities.CityReadOnly",
-      "roleWrite": "codbex-cities.Cities.CityFullAccess"
-    }
-  ],
-  "tprefix": "codbex-cities-model",
   "projectName": "codbex-cities",
   "workspaceName": "workspace",
   "filePath": "codbex-cities.model",
-  "templateId": "template-application-angular-v2/template/template.js",
+  "templateId": "template-application-angular-java/template/template.js",
+  "fileName": "codbex-cities",
+  "genFolderName": "codbex-cities",
+  "javaRuntime": true,
+  "javaGenFolderName": "codbex_cities",
+  "dataSource": "DefaultDB",
   "perspectives": {
     "Settings": {
       "views": [
@@ -28,12 +22,20 @@
       "name": "Settings",
       "label": "Settings",
       "header": "",
-      "order": "100",
+      "order": "990",
       "navId": "",
-      "icon": "/services/web/resources/unicons/globe.svg",
+      "icon": "globe",
       "role": ""
     }
   },
+  "roles": [
+    {
+      "entityName": "City",
+      "roleRead": "codbex-cities.Cities.CityReadOnly",
+      "roleWrite": "codbex-cities.Cities.CityFullAccess"
+    }
+  ],
+  "tprefix": "codbex-cities-model",
   "models": [
     {
       "properties": [
@@ -61,6 +63,7 @@
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
+          "dataTypeJavaClass": "Integer",
           "inputRule": ""
         },
         {
@@ -88,6 +91,7 @@
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
           "dataTypeTypescript": "string",
+          "dataTypeJavaClass": "String",
           "minLength": 0,
           "maxLength": 100,
           "inputRule": ""
@@ -110,7 +114,7 @@
           "relationshipName": "City_Country",
           "relationshipEntityName": "Country",
           "relationshipEntityPerspectiveName": "Settings",
-          "relationshipEntityPerspectiveLabel": "Entities",
+          "relationshipEntityPerspectiveLabel": "Settings",
           "dataNotNull": true,
           "dataAutoIncrement": false,
           "dataPrimaryKey": false,
@@ -118,10 +122,11 @@
           "isCalculatedProperty": false,
           "isReadOnlyProperty": false,
           "widgetLabel": "Country",
-          "widgetDropdownUrl": "/services/ts/codbex-countries/gen/codbex-countries/api/Settings/CountryService.ts",
-          "widgetDropdownControllerUrl": "/services/ts/codbex-countries/gen/codbex-countries/api/Settings/CountryController.ts",
+          "widgetDropdownUrl": "/services/java/codbex-countries/gen/codbex_countries/api/settings/CountryController",
+          "widgetDropdownControllerUrl": "/services/java/codbex-countries/gen/codbex_countries/api/settings/CountryController",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
+          "dataTypeJavaClass": "Integer",
           "inputRule": ""
         }
       ],
@@ -152,6 +157,7 @@
       "tooltip": "City",
       "type": "SETTING",
       "dataSource": "DefaultDB",
+      "javaPerspectiveName": "settings",
       "referencedProjections": [
         {
           "name": "Country",
@@ -169,8 +175,6 @@
       "properties": [
         {
           "auditType": "NONE",
-          "calculatedPropertyExpressionCreate": "",
-          "calculatedPropertyExpressionUpdate": "",
           "dataAutoIncrement": true,
           "dataName": "COUNTRY_ID",
           "dataNullable": true,
@@ -193,12 +197,11 @@
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
+          "dataTypeJavaClass": "Integer",
           "inputRule": ""
         },
         {
           "auditType": "NONE",
-          "calculatedPropertyExpressionCreate": "",
-          "calculatedPropertyExpressionUpdate": "",
           "dataLength": "255",
           "dataName": "COUNTRY_NAME",
           "dataNullable": true,
@@ -222,14 +225,13 @@
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
           "dataTypeTypescript": "string",
+          "dataTypeJavaClass": "String",
           "minLength": 0,
           "maxLength": 20,
           "inputRule": ""
         },
         {
           "auditType": "NONE",
-          "calculatedPropertyExpressionCreate": "",
-          "calculatedPropertyExpressionUpdate": "",
           "dataLength": "2",
           "dataName": "COUNTRY_CODE2",
           "dataNullable": true,
@@ -253,14 +255,13 @@
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
           "dataTypeTypescript": "string",
+          "dataTypeJavaClass": "String",
           "minLength": 0,
           "maxLength": 2,
           "inputRule": ""
         },
         {
           "auditType": "NONE",
-          "calculatedPropertyExpressionCreate": "",
-          "calculatedPropertyExpressionUpdate": "",
           "dataLength": "3",
           "dataName": "COUNTRY_CODE3",
           "dataNullable": true,
@@ -284,14 +285,13 @@
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
           "dataTypeTypescript": "string",
+          "dataTypeJavaClass": "String",
           "minLength": 0,
           "maxLength": 3,
           "inputRule": ""
         },
         {
           "auditType": "NONE",
-          "calculatedPropertyExpressionCreate": "",
-          "calculatedPropertyExpressionUpdate": "",
           "dataLength": "3",
           "dataName": "COUNTRY_NUMERIC",
           "dataNullable": true,
@@ -315,6 +315,7 @@
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
           "dataTypeTypescript": "string",
+          "dataTypeJavaClass": "String",
           "minLength": 0,
           "maxLength": 3,
           "inputRule": ""
@@ -335,11 +336,11 @@
       "multilingual": "false",
       "name": "Country",
       "perspectiveHeader": "",
-      "perspectiveIcon": "/services/web/resources/unicons/globe.svg",
-      "perspectiveLabel": "Entities",
+      "perspectiveIcon": "globe",
+      "perspectiveLabel": "Settings",
       "perspectiveName": "Settings",
       "perspectiveNavId": "",
-      "perspectiveOrder": "100",
+      "perspectiveOrder": "990",
       "perspectiveRole": "",
       "projectionReferencedEntity": "Country",
       "projectionReferencedModel": "/workspace/codbex-countries/codbex-countries.model",
@@ -347,6 +348,7 @@
       "tooltip": "Country",
       "type": "PROJECTION",
       "dataSource": "DefaultDB",
+      "javaPerspectiveName": "settings",
       "referencedProjections": [],
       "primaryKeys": [
         "Id"

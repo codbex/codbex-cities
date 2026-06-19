@@ -51,7 +51,7 @@
                         "relationshipName": "City_Country",
                         "relationshipEntityName": "Country",
                         "relationshipEntityPerspectiveName": "Settings",
-                        "relationshipEntityPerspectiveLabel": "Entities"
+                        "relationshipEntityPerspectiveLabel": "Settings"
                     }
                 ],
                 "caption": "Manage entity City",
@@ -87,8 +87,6 @@
                 "properties": [
                     {
                         "auditType": "NONE",
-                        "calculatedPropertyExpressionCreate": "",
-                        "calculatedPropertyExpressionUpdate": "",
                         "dataAutoIncrement": "true",
                         "dataName": "COUNTRY_ID",
                         "dataNullable": "true",
@@ -104,8 +102,6 @@
                     },
                     {
                         "auditType": "NONE",
-                        "calculatedPropertyExpressionCreate": "",
-                        "calculatedPropertyExpressionUpdate": "",
                         "dataLength": "255",
                         "dataName": "COUNTRY_NAME",
                         "dataNullable": "true",
@@ -121,8 +117,6 @@
                     },
                     {
                         "auditType": "NONE",
-                        "calculatedPropertyExpressionCreate": "",
-                        "calculatedPropertyExpressionUpdate": "",
                         "dataLength": "2",
                         "dataName": "COUNTRY_CODE2",
                         "dataNullable": "true",
@@ -138,8 +132,6 @@
                     },
                     {
                         "auditType": "NONE",
-                        "calculatedPropertyExpressionCreate": "",
-                        "calculatedPropertyExpressionUpdate": "",
                         "dataLength": "3",
                         "dataName": "COUNTRY_CODE3",
                         "dataNullable": "true",
@@ -155,8 +147,6 @@
                     },
                     {
                         "auditType": "NONE",
-                        "calculatedPropertyExpressionCreate": "",
-                        "calculatedPropertyExpressionUpdate": "",
                         "dataLength": "3",
                         "dataName": "COUNTRY_NUMERIC",
                         "dataNullable": "true",
@@ -186,11 +176,11 @@
                 "multilingual": "false",
                 "name": "Country",
                 "perspectiveHeader": "",
-                "perspectiveIcon": "/services/web/resources/unicons/globe.svg",
-                "perspectiveLabel": "Entities",
+                "perspectiveIcon": "globe",
+                "perspectiveLabel": "Settings",
                 "perspectiveName": "Settings",
                 "perspectiveNavId": "",
-                "perspectiveOrder": "100",
+                "perspectiveOrder": "990",
                 "perspectiveRole": "",
                 "projectionReferencedEntity": "Country",
                 "projectionReferencedModel": "/workspace/codbex-countries/codbex-countries.model",

@@ -1,0 +1,6 @@
+{
+    "module": "codbex-cities/gen/codbex-cities/ui/Settings/City/dialog-window/view.js",
+    "extensionPoint": "application-windows",
+    "description": "codbex-cities - Application Dialog Window",
+    "role": "codbex-cities.Cities.CityReadOnly,codbex-cities.Cities.CityFullAccess"
+}

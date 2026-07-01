@@ -5,7 +5,6 @@ import gen.codbex_cities.data.settings.CityRepository;
 
 import org.eclipse.dirigible.components.api.security.UserFacade;
 import org.eclipse.dirigible.sdk.platform.Documentation;
-import org.eclipse.dirigible.sdk.component.Inject;
 import org.eclipse.dirigible.sdk.http.Body;
 import org.eclipse.dirigible.sdk.http.Controller;
 import org.eclipse.dirigible.sdk.http.Delete;
@@ -30,8 +29,11 @@ public class CityController {
 
     private static final Set<String> FILTER_FIELDS = Set.of("Id", "Name", "Country");
 
-    @Inject
-    private CityRepository repository;
+    private final CityRepository repository;
+
+    public CityController(CityRepository repository) {
+        this.repository = repository;
+    }
 
     @Get
     @Documentation("List City")
